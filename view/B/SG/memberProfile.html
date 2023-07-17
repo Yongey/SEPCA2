@@ -1,4 +1,3 @@
-
                
                         <script src="../checkCountry.js" ></script>
                         <html>
@@ -31,6 +30,19 @@
                                     var member = null;
                                     document.addEventListener('DOMContentLoaded', function(){
                                         member = JSON.parse(sessionStorage.getItem("member"));
+                                        
+                                        // Update HTML elements with user information
+                                        document.getElementById("name").value = member.name;
+                                        document.getElementById("email").value = member.email;
+                                        document.getElementById("phone").value = member.phone;
+                                        document.getElementById("country").value = member.city;
+                                        document.getElementById("address").value = member.address;
+                                        document.getElementById("securityQuestion").value = member.securityQuestion;
+                                        document.getElementById("securityAnswer").value = member.securityAnswer
+                                        document.getElementById("age").value = member.age;
+                                        document.getElementById("income").value = member.income;
+                                                                            
+                                        console.log("security answer " + member.securityAnswer + "security question" + member.securityQuestion)
                         
                                         if(member.sla == 1) {
                                             document.getElementById("serviceLevelAgreement").checked = true;
